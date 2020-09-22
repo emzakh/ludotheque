@@ -25,7 +25,7 @@
         </div>
         <div>
             <label for="editeur">Editeur: </label>
-            <input type="text" name="type" id="type" value="">
+            <input type="text" name="editeur" id="editeur" value="">
         </div>
         <div>
             <label for="pochette">Pochette: </label>
@@ -33,7 +33,7 @@
         </div>
         <div>
         <label for="support">Support: </label>
-        <input type="text" name="nom" id="nom" value="">
+        <input type="text" name="support" id="support" value="">
         </div>
         <div>
             <input type="submit" value="Ajouter">

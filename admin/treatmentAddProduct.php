@@ -24,16 +24,11 @@
         }else{
             $err=3;
         }
-
         if(!empty($_POST['editeur'])){
             $editeur = htmlspecialchars($_POST['editeur']);
         }else{
             $err=4;
         }
-
-      
-
-
 
 
         // gestion d'insertion 
@@ -43,14 +38,14 @@
             // tester s'il y a une image envoyée dans le formulaire (on doit regarder le fichier temporaire)
             if(empty($_FILES['pochette']['tmp_name'])){
                 // insertion dans la bdd sans image
-                $upload = $bdd->prepare("UPDATE jeux SET nom=:nom, type=:type, editeur=:editeur, pochette=:pochette, support=:support WHERE id=:myid");
+
+                // $upload = $bdd->prepare("UPDATE jeux SET nom=:nom, type=:type, editeur=:editeur, pochette=:pochette, support=:support WHERE id=:myid"); ERREUR IDIOT
+                $insert = $bdd->prepare("INSERT INTO jeux(nom,type,editeur,support) VALUES(:nom,:type,:editeur,:support)");
                 $insert->execute([
                     ":nom"=>$nom,
                     ":type"=>$type,
-                    ":editeur"=>$editeur,
-                    ":pochette"=>$fichiercptl,
-                    ":support"=>$support,
-                    ":myid"=>$id
+                    ":editeur"=>$editeur,                    
+                    ":support"=>$support                    
                 ]);
                 $insert->closeCursor();
                 header("LOCATION:articles.php?insert=success");

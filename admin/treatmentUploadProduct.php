@@ -34,7 +34,6 @@
         }else{
             $err=3;
         }
-
         if(!empty($_POST['editeur'])){
             $editeur = htmlspecialchars($_POST['editeur']);
         }else{
@@ -48,12 +47,11 @@
             require "../connexion.php";
             if(empty($_FILES['pochette']['tmp_name'])){
                 // modification de l'entrée
-                $upload = $bdd->prepare("UPDATE jeux SET nom=:nom, type=:type, editeur=:editeur, pochette=:pochette, support=:support WHERE id=:myid");
+                $upload = $bdd->prepare("UPDATE jeux SET nom=:nom, type=:type, editeur=:editeur, support=:support WHERE id=:myid");
                 $upload->execute([
                     ":nom"=>$nom,
                     ":type"=>$type,
-                    ":editeur"=>$editeur,
-                    ":pochette"=>$fichiercptl,
+                    ":editeur"=>$editeur,                    
                     ":support"=>$support,
                     ":myid"=>$id
                 ]);
@@ -106,7 +104,7 @@
                             ":nom"=>$nom,
                             ":type"=>$type,
                             ":editeur"=>$editeur,
-                            ":pochette"=>$pochette,
+                            ":pochette"=>$fichiercptl,
                             ":support"=>$support,
                             ":myid"=>$id
                         ]);
