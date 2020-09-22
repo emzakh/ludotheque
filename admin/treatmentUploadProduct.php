@@ -34,6 +34,12 @@
         }else{
             $err=3;
         }
+        
+        if(!empty($_POST['editeur'])){
+            $editeur = htmlspecialchars($_POST['editeur']);
+        }else{
+            $err=4;
+        }
 
 
 
