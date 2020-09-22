@@ -26,13 +26,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produit: <?= $don['nom'] ?></title>
+    <title>Nom: <?= $don['nom'] ?></title>
 </head>
 <body>
 
     <img src="<?= $don['pochette']?>">  
     <h1><?= $don['nom'] ?></h1>
-    <h4>Editeur: <?= $don['editeur'] ?>€</h4>
+    <h4>Editeur: <?= $don['editeur'] ?></h4>
     <p><?= nl2br($don['type']) ?></p> <!-- afficher en respectant la structure du texte -->
+    
+
+    
 </body>
 </html>
