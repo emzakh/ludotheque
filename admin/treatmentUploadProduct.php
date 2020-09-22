@@ -34,7 +34,7 @@
         }else{
             $err=3;
         }
-        
+
         if(!empty($_POST['editeur'])){
             $editeur = htmlspecialchars($_POST['editeur']);
         }else{
@@ -53,7 +53,7 @@
                     ":nom"=>$nom,
                     ":type"=>$type,
                     ":editeur"=>$editeur,
-                    ":pochette"=>$pochette,
+                    ":pochette"=>$fichiercptl,
                     ":support"=>$support,
                     ":myid"=>$id
                 ]);
